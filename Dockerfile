@@ -1,5 +1,5 @@
 # Base image
-FROM ubuntu:20.04
+FROM alpine:latest
 
 # Set the working directory
 WORKDIR /app
