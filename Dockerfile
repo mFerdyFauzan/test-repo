@@ -17,7 +17,7 @@ COPY ./script.sh /app/
 
 # Install Hadoop & other components
 RUN apt update && \
-    apt -y install openjdk-11-jdk && \ 
+    apt install -y openjdk-11-jdk &&  apt install -y wget && \ 
     wget -P /app https://archive.apache.org/dist/hadoop/common/hadoop-3.3.3/hadoop-3.3.3.tar.gz && \
     tar -xzf /app/hadoop-3.3.3.tar.gz -C /app && \
     rm /app/hadoop-3.3.3.tar.gz && \
