@@ -23,7 +23,6 @@ RUN apt update && \
     tar -xzf /app/hadoop-3.3.3.tar.gz -C /app && \
     rm /app/hadoop-3.3.3.tar.gz && \
     mv /app/hadoop-3.3.3 $HADOOP_HOME && \
-    mv hadoop-env.sh core-site.xml hdfs-site.xml $HADOOP_HOME/etc/hadoop/  && \
     chmod +x /app/script.sh
 
 # Copy the script file
