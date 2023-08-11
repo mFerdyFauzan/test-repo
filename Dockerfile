@@ -13,12 +13,12 @@ ENV JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64 \
     HDFS_SECONDARYNAMENODE_USER="root"
 
 # Copy Hadoop Installer and othter components
-COPY ./* /app/
+COPY ./script.sh /app/
 
 # Install Hadoop & other components
 RUN apt update && \
     apt -y install openjdk-11-jdk && \ 
-    wget -P ~/ https://archive.apache.org/dist/hadoop/common/hadoop-3.3.3/hadoop-3.3.3.tar.gz && \
+    wget -P /app https://archive.apache.org/dist/hadoop/common/hadoop-3.3.3/hadoop-3.3.3.tar.gz && \
     tar -xzf /app/hadoop-3.3.3.tar.gz -C /app && \
     rm /app/hadoop-3.3.3.tar.gz && \
     mv /app/hadoop-3.3.3 $HADOOP_HOME && \
